@@ -6,15 +6,24 @@
 $fa=0.5;
 $fs=0.5;
 
-difference() {
-	sphere(12.5);
-	
-	translate([0,0,-6.5])
-	cube([26,26,13],center=true);
 
-	translate([0,0,7.5])
-	rotate([0,90,0])
-	scale([1.3,1,1])
-	cylinder(r=4, h=30, center=true);
+module blob() {
+	difference() {
+		sphere(12.5);
+		
+		translate([0,0,-6.5])
+		cube([26,26,13],center=true);
+	
+		translate([0,0,7.5])
+		rotate([0,90,0])
+		scale([1.3,1,1])
+		cylinder(r=4, h=30, center=true);
+	}
 }
 
+module catcher() {
+	for (i=[0:4]) {
+		translate([0,i*14.96,0])
+		blob();
+	}
+}
