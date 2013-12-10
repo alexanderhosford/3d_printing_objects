@@ -27,3 +27,5 @@ module catcher() {
 		blob();
 	}
 }
+
+catcher();
