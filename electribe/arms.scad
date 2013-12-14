@@ -19,6 +19,19 @@ module fixed_arm() {
 	cylinder(r=2.25,h=4,center=true);
 }
 
+module fixed_arm_2() {
+	difference() {
+		roundedBox([214,10,4],5,true);
+		roundedBox([114,5,6],2.5,true);
+	}
+
+	translate([-102,0,3.5])
+	cylinder(r=2.25,h=4,center=true);	
+}
+
+translate([0,0,100])
+fixed_arm_2();
+
 module pivot_arm() {
 	difference() {
 		roundedBox([107,10,4],5,true);
